@@ -34,7 +34,10 @@ The model consists of five main functional components:
 
 ### 1. Photovoltaic Power Generation
 
-Solar irradiance data are provided through a Signal Editor block and processed by the PV subsystem to obtain the photovoltaic power output (`P_pv`).
+### PV and Load Data Input
+
+Solar irradiance and electrical load profiles for **21 June 2023 in Medway, UK**, were imported into MATLAB/Simulink using Signal Editor blocks.
+These inputs were used to generate the PV output power (`P_pv`) and represent electrical demand (`P_load`) for the 24-hour energy management simulation.
 
 ### 2. Electrical Load Demand
 
