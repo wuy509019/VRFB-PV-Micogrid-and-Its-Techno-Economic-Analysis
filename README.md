@@ -55,6 +55,7 @@ Its SOC output is fed back to the controller through a Unit Delay block, allowin
 ### 5. Grid Interaction and Financial Analysis
 
 A techno-economic feasibility analysis was conducted to evaluate the financial performance of the proposed 100 kW PV and 400 kWh VRFB system.
+
 The analysis was based on a 24-hour MATLAB/Simulink simulation using solar irradiance and load inputs for 21 June 2023 in Medway, UK. A Time-of-Use electricity tariff model was adopted, with off-peak and peak import prices assumed to be £0.12/kWh and £0.32/kWh, respectively.
 
 ## Key Simulation Results
