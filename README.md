@@ -25,6 +25,8 @@ A MATLAB/Simulink model was developed to analyse solar power generation, battery
 - Techno-Economic Analysis
 
 ## System Architecture and Simulation Model
+![Simulink System Architecture](images/System_Architecture1.png)
+![Simulink System Architecture](images/System_Architecture2.png)
 
 The proposed PV–VRFB microgrid was modelled using MATLAB/Simulink to investigate power management, battery operation, grid interaction, and economic performance over a 24-hour simulation period.
 
