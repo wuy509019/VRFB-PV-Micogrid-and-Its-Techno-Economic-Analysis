@@ -23,7 +23,7 @@ A MATLAB/Simulink model was developed to analyse solar power generation, battery
 - Battery Energy Storage Systems
 - Energy Management and Control
 - Techno-Economic Analysis
-- 
+
 ### Control Logic Design
 
 A MATLAB Function block named **Processing Unit** was developed in Simulink to manage power flow between the photovoltaic system, vanadium redox flow battery (VRFB), electrical load, and utility grid.
