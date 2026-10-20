@@ -23,6 +23,16 @@ A MATLAB/Simulink model was developed to analyse solar power generation, battery
 - Battery Energy Storage Systems
 - Energy Management and Control
 - Techno-Economic Analysis
+- 
+### Control Logic Design
+
+A MATLAB Function block named **Processing Unit** was developed in Simulink to manage power flow between the photovoltaic system, vanadium redox flow battery (VRFB), electrical load, and utility grid.
+
+The control algorithm, implemented in the `fcn` function, determines battery charging, discharging, and grid interaction based on the net power balance and battery State of Charge (SOC).
+
+The battery operating limits were set between 20% and 80% SOC.
+
+The original control logic is documented in Appendix A of the project report.
 
 ## Key Simulation Results
 
