@@ -24,15 +24,41 @@ A MATLAB/Simulink model was developed to analyse solar power generation, battery
 - Energy Management and Control
 - Techno-Economic Analysis
 
-### Control Logic Design
+## System Architecture and Simulation Model
 
-A MATLAB Function block named **Processing Unit** was developed in Simulink to manage power flow between the photovoltaic system, vanadium redox flow battery (VRFB), electrical load, and utility grid.
+The proposed PV–VRFB microgrid was modelled using MATLAB/Simulink to investigate power management, battery operation, grid interaction, and economic performance over a 24-hour simulation period.
 
-The control algorithm, implemented in the `fcn` function, determines battery charging, discharging, and grid interaction based on the net power balance and battery State of Charge (SOC).
+The model consists of five main functional components:
 
-The battery operating limits were set between 20% and 80% SOC.
+### 1. Photovoltaic Power Generation
 
-The original control logic is documented in Appendix A of the project report.
+Solar irradiance data are provided through a Signal Editor block and processed by the PV subsystem to obtain the photovoltaic power output (`P_pv`).
+
+### 2. Electrical Load Demand
+
+A separate Signal Editor block supplies the electrical load profile (`P_load`), representing the system's varying electricity demand.
+
+### 3. Processing Unit — Energy Management
+
+The Processing Unit is implemented using a MATLAB Function block (`fcn`).
+
+It receives PV power, electrical load demand, and battery State of Charge (SOC) as inputs. Based on these values, the controller calculates the battery power reference (`P_bat_ref`) and grid power (`P_grid`).
+
+The implemented control logic prioritises solar energy utilisation and battery charging or discharging, subject to SOC operating limits of 20% and 80%.
+
+### 4. Battery Storage and SOC Feedback
+
+The battery subsystem receives the charging or discharging power reference from the Processing Unit.
+
+Its SOC output is fed back to the controller through a Unit Delay block, allowing the controller to determine the appropriate operating mode based on the battery's previous SOC value.
+
+### 5. Grid Interaction and Financial Analysis
+
+Grid power is used to calculate electricity export revenue and import expenditure.
+
+The financial calculation section includes separate paths for selling electricity to the grid and purchasing electricity from the grid. A time-dependent tariff selection block is used to represent the electricity import pricing structure.
+
+The resulting financial outputs are combined to determine the simulated daily net financial outcome.
 
 ## Key Simulation Results
 
