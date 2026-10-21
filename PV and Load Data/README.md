@@ -23,6 +23,12 @@ A scaled commercial load profile was adopted to represent the electrical demand 
 ## Data Integration
 
 The solar irradiance and load profiles were imported into MATLAB/Simulink using Signal Editor blocks.
+Two input scenarios were configured in the MATLAB/Simulink Signal Editor for the final 24-hour simulation:
+
+- **PV Scenario:** Provides the solar irradiance input profile to the photovoltaic subsystem.
+- **Load Scenario:** Provides the time-varying electrical load profile to the Processing Unit.
+
+Both scenarios were configured for the selected simulation period of 21 June 2023 in Medway, UK, and were used to evaluate the PV–VRFB system's energy management performance.
 
 The resulting power signals were supplied to the Processing Unit for calculating the net power balance and determining battery charging, discharging, and grid interaction.
 
