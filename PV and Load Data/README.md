@@ -33,6 +33,37 @@ Both files contain multiple scenarios stored as `Simulink.SimulationData.Dataset
 
 The `x6_21` scenario was selected for the final 24-hour simulation, representing 21 June 2023 in Medway, UK.
 
+## How to Load Signal Editor Data
+
+The PV and Load input scenarios are stored in MATLAB `.mat` files and can be loaded into the MATLAB Workspace.
+
+### Step 1: Load the Data
+
+Open MATLAB, set the current folder to the directory containing the downloaded `.mat` files, and enter the following commands in the **MATLAB Command Window**:
+
+```matlab
+load('data_waves.mat');
+load('load_data_waves.mat');
+```
+
+### Step 2: Verify the Imported Scenarios
+
+Run the following command to check the available variables:
+
+```matlab
+whos
+```
+
+The datasets contain several input scenarios, including `x6_21`, which was selected for the final simulation on **21 June 2023**.
+
+### Step 3: Configure the Signal Editor
+
+Open the Simulink model `pvbattery1.slx` and check the input configuration of the corresponding Signal Editor blocks.
+
+Select the `x6_21` scenario for both the PV and Load inputs before running the 24-hour simulation.
+
+**Note:** Loading the `.mat` files into the MATLAB Workspace does not necessarily configure or activate the scenarios in the Signal Editor blocks automatically.
+
 ## Notes
 
 The simulation represents a selected summer-day scenario rather than annual operating conditions. The load profile is a scaled modelling input and should not be interpreted as independently verified historical metered consumption for Medway on that date.
