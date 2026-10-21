@@ -11,6 +11,8 @@ The simulation considers a 24-hour period on **21 June 2023**, for the Medway ar
 ### Solar Irradiance Data
 
 Solar irradiance data for Medway were used as inputs to the PV subsystem to calculate the photovoltaic output power (`P_pv`).
+21/06/2023 Medway sunlight data: Mesdway_sunlight_data_2023_6_21.xlsx 
+original Medway sunlight data: medway original sunlight data.xlsx
 
 ### Electrical Load Data
 
