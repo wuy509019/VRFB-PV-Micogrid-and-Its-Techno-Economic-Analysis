@@ -18,7 +18,7 @@ Solar irradiance data for Medway were used as inputs to the PV subsystem to calc
 ### Electrical Load Data
 
 A scaled commercial load profile was adopted to represent the electrical demand (`P_load`) of the simulated site, with a peak load of approximately 80 kW.
-- [Electrical Load Data](Medway_Load_Data.xlsx)
+- [Electrical Load Data](Medway_Load_Data_2023_6_21.xlsx)
 
 ## Data Integration
 
