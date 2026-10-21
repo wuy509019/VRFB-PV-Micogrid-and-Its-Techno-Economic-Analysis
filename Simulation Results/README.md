@@ -48,7 +48,7 @@ The results demonstrate the controller's operation under the defined SOC limits 
 
 ## 4. Overall Financial Simulation Results
 
-![Overall Financial Results](../images/daily%20operational%20economics%20summary.png)
+![Overall Financial Results](../images/daily%20operational%20economics%20summary(24%20hours).png)
 
 *Figure 3. Combined 24-hour economic simulation results showing cumulative electricity export revenue, import costs, and net electricity trading cash flow.*
 
