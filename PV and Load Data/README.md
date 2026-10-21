@@ -20,10 +20,9 @@ Solar irradiance data for Medway were used as inputs to the PV subsystem to calc
 A scaled commercial load profile was adopted to represent the electrical demand (`P_load`) of the simulated site.
 - [Electrical Load Data](Medway_Load_Data_2023_6_21.xlsx)
 
-## Data Integration
+## Matlab Input data
 
 The solar irradiance and load profiles were imported into MATLAB/Simulink using Signal Editor blocks.
-Two input scenarios were configured in the MATLAB/Simulink Signal Editor for the final 24-hour simulation:
 
 - **PV Scenario:** Provides the solar irradiance input profile to the photovoltaic subsystem.
 - **Load Scenario:** Provides the time-varying electrical load profile to the Processing Unit.
