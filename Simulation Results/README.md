@@ -8,7 +8,7 @@ The simulation was conducted using the selected input scenario for **21 June 202
 
 ## 2. PV and Grid Power Interaction
 
-![Grid Power](../images/Grid_Power.png)
+![Grid Power](../images/grid%20power.png)
 
 *Figure 1. Grid power interaction over the 24-hour simulation.*
 
@@ -27,7 +27,7 @@ The results illustrate how the energy management system coordinates photovoltaic
 
 ## 3. Battery SOC Performance
 
-![Battery SOC](../images/Battery_SOC.png)
+![Battery SOC](../images/battery_soc.png)
 
 *Figure 2. Battery State of Charge (SOC) during the 24-hour simulation.*
 
@@ -48,7 +48,7 @@ The results demonstrate the controller's operation under the defined SOC limits 
 
 ## 4. Overall Financial Simulation Results
 
-![Overall Financial Results](../images/Overall_Financial_Results.png)
+![Overall Financial Results](../images/daily%20operational%20economics%20summary.png)
 
 *Figure 3. Combined 24-hour economic simulation results showing cumulative electricity export revenue, import costs, and net electricity trading cash flow.*
 
