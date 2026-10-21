@@ -22,6 +22,10 @@ The calculation can be expressed as:
 
 ### 1.2 Purchase from the Grid
 
+![Purchase Module](../images/purchase.png)
+
+*Figure 2. Simulink electricity import cost calculation module.*
+
 The purchasing module calculates the cumulative cost of importing electricity when PV generation and battery storage cannot fully satisfy the load demand.
 
 Negative grid power (`P_grid < 0`) represents electricity imported from the grid.
@@ -47,7 +51,7 @@ The final calculation branch combines cumulative electricity export revenue and 
 
 **Daily Net Electricity Cash Flow = Export Revenue − Import Cost**
 
-![Daily Net Electricity Cash Flow](../images/daily%20profit.png)
+![Daily operational economics summary](../images/daily%20operational%20economics%20summary(24%20hours).png)
 
 The reported simulation results were:
 
