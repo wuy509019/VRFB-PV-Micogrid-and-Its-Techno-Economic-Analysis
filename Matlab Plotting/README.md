@@ -1,9 +1,132 @@
-## Simulation Data Processing and Visualisation
+# MATLAB Simulation Data Processing and Visualisation
 
-The simulation outputs were exported from MATLAB/Simulink to the MATLAB Workspace for post-processing and visualisation.
+## Overview
 
-MATLAB scripts were used to process the exported simulation data and generate the figures presented in this section, including grid power interaction, battery State of Charge (SOC), and financial performance.
+This directory contains MATLAB scripts used to process and visualise simulation outputs from the PV–VRFB microgrid model.
 
-This workflow separates simulation execution from results visualisation, allowing the output data to be further analysed and plotted independently of the Simulink Scope blocks.
+Rather than using screenshots directly captured from Simulink Scope blocks, the simulation signals were exported to the MATLAB Workspace and plotted programmatically.
 
-Where provided, the MATLAB plotting scripts can be found in the [Plotting Scripts](../plotting/) directory.
+These scripts generate figures for grid power interaction, battery State of Charge (SOC), electricity trading costs, revenue, and overall financial performance.
+
+## 1. Data Processing Workflow
+
+The results visualisation follows the workflow:
+
+**Simulink Model → Workspace Outputs → MATLAB Plotting Scripts → Simulation Figures**
+
+1. The PV–VRFB microgrid simulation is executed in MATLAB/Simulink.
+2. Output signals are recorded and made available in the MATLAB Workspace.
+3. MATLAB scripts extract the corresponding time-series data.
+4. Custom figures are generated with operating phase annotations, axis labels, and other visual elements.
+
+This approach separates simulation execution from result visualisation and allows figures to be regenerated using the saved plotting logic.
+
+## 2. MATLAB Plotting Scripts
+
+| Script | Description |
+|---|---|
+| `plot_grid_power.m` | Visualises electricity exchange with the utility grid and identifies four operating phases (M1–M4). |
+| `plot_battery_soc.m` | Plots the battery SOC profile, identifies four operating phases, and displays the 20% and 80% operating limits. |
+| `plot_selling_revenue.m` | Plots cumulative electricity export revenue and annotates three phases. |
+| `plot_purchase_cost.m` | Plots cumulative electricity import costs using predefined phase boundaries. |
+| `plot_net_profit.m` | Plots cumulative net electricity trading cash flow with a zero-reference line. |
+| `plot_financial_summary.m` | Combines export revenue, import cost, and net cash flow into one financial summary figure. |
+
+## 3. Required Simulation Outputs
+
+The plotting scripts require simulation output signals stored in the MATLAB variable `out`.
+
+| Signal | Description |
+|---|---|
+| `out.graph` | Grid power interaction |
+| `out.graph1` | Battery SOC |
+| `out.graph2` | Cumulative electricity export revenue |
+| `out.graph3` | Cumulative electricity import cost |
+| `out.graph4` | Cumulative net electricity trading cash flow |
+
+The individual plotting scripts use corresponding time variables, including `out.time`, `out.time1`, `out.time2`, `out.time3`, and `out.time4`.
+
+The combined financial summary script uses `out.time` with the three financial output signals.
+
+**Note:** The scripts assume that the required signals are available after simulation and use compatible data formats and time units.
+
+## 4. How to Run
+
+### Step 1 — Open the Simulink Model
+
+Open the main project model in MATLAB:
+
+```matlab
+open_system('pvbattery1.slx');
+```
+
+### Step 2 — Run the Simulation
+
+Execute the simulation using the configured PV generation, load demand, and battery parameters.
+
+Ensure that the required output signals are available in the MATLAB Workspace as `out`.
+
+### Step 3 — Generate the Figures
+
+From the repository root directory, execute the plotting scripts:
+
+```matlab
+% Grid power interaction
+run('plotting/plot_grid_power.m');
+
+% Battery SOC
+run('plotting/plot_battery_soc.m');
+
+% Electricity export revenue
+run('plotting/plot_selling_revenue.m');
+
+% Electricity import cost
+run('plotting/plot_purchase_cost.m');
+
+% Net electricity trading cash flow
+run('plotting/plot_net_profit.m');
+
+% Combined financial summary
+run('plotting/plot_financial_summary.m');
+```
+
+Each script produces its own MATLAB figure using the simulation signals.
+
+## 5. Visualisation Features
+
+### 5.1 Operating Phase Identification
+
+The grid power and SOC scripts identify four operating phases (M1–M4) using signal thresholds and transition points.
+
+The financial scripts use three operating phases (M1–M3), with boundaries determined either from the signals or from predefined time values.
+
+Double-headed arrows and phase labels are added to illustrate the different operating periods.
+
+### 5.2 Battery SOC Operating Limits
+
+The battery SOC figure includes horizontal reference lines at 20% and 80% to show the controller's defined operating thresholds.
+
+### 5.3 Combined Financial Comparison
+
+The combined financial summary displays three cumulative financial signals on a shared time axis:
+
+- Electricity export revenue
+- Electricity import expenditure
+- Net electricity trading cash flow
+
+This provides a comparison of electricity trading performance over the 24-hour simulation.
+
+## 6. Implementation Notes
+
+- The scripts use simulation data generated by the main Simulink model and are not standalone simulation programs.
+- The input time signals are expected to be expressed in hours for the individual plotting scripts.
+- The combined financial plotting script includes a conditional conversion from seconds to hours.
+- Several operating phase annotations depend on predefined thresholds or time boundaries calibrated to the original simulation.
+- The combined financial legend includes fixed result labels of £112, £65, and £47. These labels should be updated if the simulation outputs change.
+- Successful execution requires compatible Workspace signal dimensions and formats.
+
+## 7. Simulation Results
+
+The generated figures and their engineering and economic interpretations are presented in the [Simulation Results and Analysis](../Simulation%20Results/README.md) section.
+
+This directory focuses on the MATLAB implementation of the visualisation process rather than repeating the simulation results.
