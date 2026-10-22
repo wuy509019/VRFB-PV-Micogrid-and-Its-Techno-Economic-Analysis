@@ -34,4 +34,4 @@ This calculation represents the net electricity trading cash flow and does not i
 
 ## Simulation Results
 
-The simulation outputs, financial results, and their interpretations are presented separately in the [Simulation Results and Analysis](../Simulation%20Results/README.md) section.
+The simulation outputs, financial results, and their interpretations are presented separately in the [Simulation Results and Analysis](../Simulation%20Results%20and%20Analysis/README.md) section.
