@@ -127,6 +127,6 @@ This provides a comparison of electricity trading performance over the 24-hour s
 
 ## 7. Simulation Results
 
-The generated figures and their engineering and economic interpretations are presented in the [Simulation Results and Analysis](../Simulation%20Results/README.md) section.
+The generated figures and their engineering and economic interpretations are presented in the [Simulation Results](../Simulation%20Results/README.md) section.
 
 This directory focuses on the MATLAB implementation of the visualisation process rather than repeating the simulation results.
